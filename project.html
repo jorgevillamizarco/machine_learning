@@ -64,7 +64,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 </div>
 <div id="getting-and-cleaning-data" class="section level2">
 <h2>Getting and Cleaning Data</h2>
-<p>First we need to download all necessary data and load it removing all missing values using the following code lines:</p>
+<p>First  we need to download all necessary data and load it removing all missing values using the following code lines:</p>
 <pre class="r"><code>traindata &lt;- read.table(&quot;./pml-training.csv&quot;, sep=&quot;,&quot;, na.strings = c(&quot;&quot;, &quot;NA&quot;, &quot;#DIV/0!&quot;), header=TRUE)
 testdata &lt;- read.table(&quot;./pml-testing.csv&quot;, sep=&quot;,&quot;, na.strings = c(&quot;&quot;, &quot;NA&quot;, &quot;#DIV/0!&quot;), header=TRUE)</code></pre>
 <p>traingdata dataset will be used for model creation, training, error calculation and model validation, while testdata dataset will be used for prediction. With a first look over traindata we can see that theres a lot of variables with missing values, so in order to get a simpler dataset its necessary to remove those variables, first calculating the number of NAs for each column and then removing all columns with 90% or more of NAs:</p>
